@@ -41,6 +41,8 @@ inoremap <C-v> "*y
 inoremap <C-s> <C-o>:w<CR>
 nnoremap <C-f> <C-o>:/
 inoremap <C-f> <C-o>:/
+nnoremap <C-a> ggVG
+inoremap <C-a> ggVG
 
 
 " tab para o autocomplete do c# "
