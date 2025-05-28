@@ -46,7 +46,7 @@ nnoremap <C-a> ggVG
 inoremap <C-a> ggVG
 nnoremap <F10> <C-o>:AIChat 
 inoremap <F10> <C-o>:AIChat 
-vnoremap <F10> <C-o>:AIChat 
+vnoremap <F10> :AIChat 
 
 " tab para o autocomplete do c# "
 inoremap <expr> <Tab> pumvisible() ? '<C-n>' :                                                                                                                    
