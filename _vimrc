@@ -39,6 +39,8 @@ vnoremap <C-v> "*y
 inoremap <C-c> "+y
 inoremap <C-v> "*y
 inoremap <C-s> <C-o>:w<CR>
+nnoremap <C-f> <C-o>:/
+inoremap <C-f> <C-o>:/
 
 
 " tab para o autocomplete do c# "
