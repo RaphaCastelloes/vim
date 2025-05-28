@@ -25,7 +25,7 @@ autocmd VimEnter * NERDTree " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
 
 " Vim-ai setup "
-let g:vim_ai_roles_config_file = data_dir . '/plugged/vim-ai/roles.ini'
+let g:vim_ai_roles_config_file = expand('$ProgramFiles') . '/Vim/roles.ini'
 
 " Hotkeys "
 map <C-o> :NERDTreeToggle<CR> " "Control+o" para abrir a arvore
@@ -39,11 +39,14 @@ vnoremap <C-v> "*y
 inoremap <C-c> "+y
 inoremap <C-v> "*y
 inoremap <C-s> <C-o>:w<CR>
+nnoremap <C-s> <C-o>:w<CR>
 nnoremap <C-f> <C-o>:/
 inoremap <C-f> <C-o>:/
 nnoremap <C-a> ggVG
 inoremap <C-a> ggVG
-
+nnoremap <F10> <C-o>:AIChat 
+inoremap <F10> <C-o>:AIChat 
+vnoremap <F10> <C-o>:AIChat 
 
 " tab para o autocomplete do c# "
 inoremap <expr> <Tab> pumvisible() ? '<C-n>' :                                                                                                                    
