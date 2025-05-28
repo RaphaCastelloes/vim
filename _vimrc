@@ -21,7 +21,7 @@ let g:OmniSharp_server_stdio = 1 " Ativa comunicação do omnisharp
 
 " NerdTree setup "
 let NERDTreeShowHidden = 1 " Mostra os arquivos 
-autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * NERDTree | wincmd p | startinsert
 " autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
 
 " Vim-ai setup "
@@ -45,8 +45,8 @@ inoremap <C-f> <C-o>:/
 nnoremap <C-a> ggVG
 inoremap <C-a> ggVG
 nnoremap <F10> <C-o>:AIChat 
-inoremap <F10> <C-o>:AIChat 
-vnoremap <F10> :AIChat 
+inoremap <F10> <Esc>ggVG:AIChat
+vnoremap <F10> :AIChat
 
 " tab para o autocomplete do c# "
 inoremap <expr> <Tab> pumvisible() ? '<C-n>' :                                                                                                                    
