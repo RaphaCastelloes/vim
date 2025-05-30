@@ -14,6 +14,8 @@ Plug 'scrooloose/nerdtree' " folder navigation
 Plug 'madox2/vim-ai' " ai integrated
 Plug 'puremourning/vimspector' " debugger
 Plug 'davidhalter/jedi-vim' " python plugin
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf find file
+Plug 'junegunn/fzf.vim' " fzf find file
 call plug#end()
 
 " OmniSharp setup "
@@ -57,6 +59,11 @@ vnoremap <F10> :AIChat
 nnoremap <C-q> <C-o>:q!<CR>
 inoremap <C-q> <C-o>:q!<CR>
 vnoremap <C-q> <C-o>:q!<CR>
+nnoremap <F8> <Esc>:Files <C-R>=getcwd()<CR><CR>
+inoremap <F8> <Esc>:Files <C-R>=getcwd()<CR><CR>
+vnoremap <F8> <Esc>:Files <C-R>=getcwd()<CR><CR>
+
+
 
 " tab para o autocomplete do c# "
 inoremap <expr> <Tab> pumvisible() ? '<C-n>' :                                                                                                                    
