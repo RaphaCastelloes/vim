@@ -25,12 +25,14 @@ let NERDTreeShowHidden = 1 " Mostra os arquivos
 " Abre o NERDTree ao iniciar o Vim
 autocmd VimEnter * NERDTree
 
-autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
+" Aguarda 500ms e volta para a janela anterior (normalmente o buffer de edição)
+autocmd VimEnter * call timer_start(50, { -> execute('normal gb') })
 
-" Aguarda 100ms, muda para a janela anterior e entra no modo de inserção
-autocmd VimEnter * call timer_start(100, { -> execute('wincmd p') })
+" Aguarda 500ms e volta para a janela anterior (normalmente o buffer de edição)
+autocmd VimEnter * call timer_start(500, { -> execute('wincmd p') })
 
-""""" autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
+" Aguarda 1000ms e entra em modo de inserção
+autocmd VimEnter * call timer_start(1000, { -> feedkeys("i", 'n') })
 
 " Vim-ai setup "
 let g:vim_ai_roles_config_file = expand('$ProgramFiles') . '/Vim/roles.ini'
