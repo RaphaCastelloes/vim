@@ -21,8 +21,16 @@ let g:OmniSharp_server_stdio = 1 " Ativa comunicação do omnisharp
 
 " NerdTree setup "
 let NERDTreeShowHidden = 1 " Mostra os arquivos 
-autocmd VimEnter * NERDTree | wincmd p | startinsert
-" autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
+
+" Abre o NERDTree ao iniciar o Vim
+autocmd VimEnter * NERDTree
+
+autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
+
+" Aguarda 100ms, muda para a janela anterior e entra no modo de inserção
+autocmd VimEnter * call timer_start(100, { -> execute('wincmd p') })
+
+""""" autocmd VimEnter * call timer_start(50, { -> execute("normal gb") })
 
 " Vim-ai setup "
 let g:vim_ai_roles_config_file = expand('$ProgramFiles') . '/Vim/roles.ini'
