@@ -31,13 +31,13 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * call timer_start(50, { -> execute('normal gb') })
 
 " Aguarda 500ms e volta para a janela anterior (normalmente o buffer de edição)
-autocmd VimEnter * call timer_start(500, { -> execute('wincmd p') })
+autocmd VimEnter * call timer_start(200, { -> execute('wincmd p') })
 
 " Vim-ai setup "
 let g:vim_ai_roles_config_file = expand('$ProgramFiles') . '/Vim/roles.ini'
 
 " Hotkeys "
-map <C-o> :NERDTreeToggle<CR> " "Control+o" para abrir a arvore
+map <C-e> :NERDTreeToggle<CR> " "Control+o" para abrir a arvore
 nnoremap <F2> :let @/ = '\<'.expand('<cword>').'\>'<CR>/\V<C-r>=@/<CR><CR>N
 nnoremap <RightMouse> :let @/ = '\<'.expand('<cword>').'\>'<CR>/\V<C-r>=@/<CR><CR>N 
 inoremap <F12> <C-o>:stopinsert<CR>
@@ -47,16 +47,16 @@ vnoremap <C-c> "+y
 vnoremap <C-v> "*y
 inoremap <C-c> "+y
 inoremap <C-v> "*y
-inoremap <C-s> <C-o>:w<CR>
-nnoremap <C-s> <C-o>:w<CR>
-nnoremap <C-f> <C-o>:/
+inoremap <C-s> <C-o>:w<CR><Esc>
+nnoremap <C-s> :w<CR>
+nnoremap <C-f> :/
 inoremap <C-f> <C-o>:/
 nnoremap <C-a> ggVG
 inoremap <C-a> ggVG
-nnoremap <F10> <C-o>:AIChat 
+nnoremap <F10> :AIChat 
 inoremap <F10> <Esc>ggVG:AIChat
 vnoremap <F10> :AIChat
-nnoremap <C-q> <C-o>:q!<CR>
+nnoremap <C-q> :q!<CR>
 inoremap <C-q> <C-o>:q!<CR>
 vnoremap <C-q> <C-o>:q!<CR>
 nnoremap <F8> <Esc>:Files <C-R>=getcwd()<CR><CR>
