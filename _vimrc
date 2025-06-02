@@ -38,11 +38,11 @@ let g:vim_ai_roles_config_file = expand('$ProgramFiles') . '/Vim/roles.ini'
 
 " Hotkeys "
 map <C-e> :NERDTreeToggle<CR> " "Control+o" para abrir a arvore
-nnoremap <F2> :let @/ = '\<'.expand('<cword>').'\>'<CR>/\V<C-r>=@/<CR><CR>N
+nnoremap <F12> :let @/ = '\<'.expand('<cword>').'\>'<CR>/\V<C-r>=@/<CR><CR>N
 nnoremap <RightMouse> :let @/ = '\<'.expand('<cword>').'\>'<CR>/\V<C-r>=@/<CR><CR>N 
-inoremap <F12> <C-o>:stopinsert<CR>
-nnoremap <F12> u
-nnoremap <F9> <C-r>
+inoremap <F2> <C-o>:stopinsert<CR>
+nnoremap <F2> u
+nnoremap <F3> <C-r>
 vnoremap <C-c> "+y
 vnoremap <C-v> "*y
 inoremap <C-c> "+y
